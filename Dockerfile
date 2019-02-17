@@ -31,7 +31,7 @@ RUN wget http://hostap.epitest.fi/releases/hostapd-2.6.tar.gz && \
     ../../hostapd-wpe/certs/bootstrap && \
     cd ../../hostapd-2.6/hostapd
 
-COPY hostapd_base.conf /opt/hostapd-wpe/hostapd/hostapd_dumb_down.conf
+#COPY hostapd-base.conf /opt/hostapd-wpe/hostapd/hostapd_dumb_down.conf
 
 ###################
 # Freeradius shit #
@@ -42,7 +42,6 @@ COPY radius_config_file /etc/freeradius/eap.conf
 ######################################
 # Deploying script and starting shit #
 ######################################
-
 COPY base_script.sh /opt
 
 ENTRYPOINT ["/opt/base_script.sh"]
